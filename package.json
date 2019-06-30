@@ -1,0 +1,27 @@
+{
+  "name": "simple-eth-server",
+  "version": "1.0.0",
+  "description": "A simple nodejs server to deploy a simple contract to the Ethereum Ropsten network. Can interact with contract by reading and writing to a simple variable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzdogan/simple-eth-server.git"
+  },
+  "keywords": [
+    "ethereum",
+    "ropsten",
+    "nodejs",
+    "node",
+    "'smart",
+    "contract'"
+  ],
+  "author": "kuzdogan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuzdogan/simple-eth-server/issues"
+  },
+  "homepage": "https://github.com/kuzdogan/simple-eth-server#readme"
+}
