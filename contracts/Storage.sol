@@ -4,11 +4,11 @@ contract Storage {
     uint number;
     string str;
 
-    function getString() public view returns(string) [
+    function getString() public view returns(string memory) {
       return str;
-    ]
+    }
 
-    function setString(string x) public {
+    function setString(string memory x) public {
       str = x;
     }
 
