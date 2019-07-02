@@ -52,6 +52,7 @@ module.exports = {
       console.log('DEPLOYED')
       instance.setNumber(number, {from: self.account}).then( (result) => {
         callback(result);
+        return result;
       });
     }).then(function() {
         

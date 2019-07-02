@@ -35,7 +35,7 @@ rm -r node_modules/web3-providers-ws/node_modules/websocket/.git
 
 ## 3. Compile the contract
 ```
-npm run truffle compile
+truffle compile
 ```
 
 This will create artifacts in /build/contracts/
@@ -51,7 +51,22 @@ Deploy with
 truffle migrate --network ropsten
 ```
 
+## 5. Run the server
+Run the express server with
+```
+node app.js
+```
 
+You can access the server at `http://localhost:3000/`
+
+
+# API
+
+| Endpoints | Function | Type | Params |  |
+|--------------|------------------------------------------------------------------|------|------------------|---|
+| /getAccounts | Returns accounts associated with the seed provided to the wallet | GET |  |  |
+| /getNumber | Returns the number as response | GET |  |  |
+| /setNumber | Sets the stored number in the contract to the provided number. Prints the result on the backend console. | POST | { number: uint } |  |
 
 [^1]: https://www.sitepoint.com/truffle-migrations-explained/
 

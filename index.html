@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          var send = function () {
+              alert('HELLO')
+              //existing code
+          }
+
+          $('#button').on('click', send)
+      });
+    // $(document).ready(function(){
+      var send = function {
+        alert("HELLO")
+        // $.ajax({
+        //   type: frm.attr('method'),
+        //   url: frm.attr('action'),
+        //   data: frm.serialize(),
+        //   success: function (data) {
+        //       console.log('Submission was successful.');
+        //       console.log(data);
+        //   },
+        //   error: function (data) {
+        //       console.log('An error occurred.');
+        //       console.log(data);
+        //   },
+        // });
+      }  
+    // }
+  </script>
+  </head>
+  <body>
+      <div>
+        <label for="number">Number:<label>
+        <input type="text" id="number" name="number">
+      </div>
+      <button id="button"> Submit </button>
+  </body>
+</html>
