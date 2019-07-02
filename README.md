@@ -63,13 +63,13 @@ You can access the server at `http://localhost:3000/`
 
 # API
 
-| Endpoints | Function | Type | Params |
-|--------------|------------------------------------------------------------------|------|------------------|---|
-| /getAccounts | Returns accounts associated with the seed provided to the wallet | GET |  |
-| /getNumber | Returns the number as response | GET |  |
-| /setNumber | Sets the stored number in the contract to the provided number. Prints the result of the transaction on the backend console. | POST | { number: <uint> } |
-| /getString | Returns the string as response | GET |  |
-| /setString | Sets the stored string in the contract to the provided string. Prints the result of the transaction on the backend console. | POST | { string: <string> } |
+| Endpoints | Function | Type | Body |  |
+|--------------|------------------------------------------------------------------------------------------------------------------------------|------|--------------------|---|
+| /getAccounts | Returns accounts associated with the seed provided to the wallet | GET |  |  |
+| /getNumber | Returns the number as response | GET |  |  |
+| /setNumber | Sets the stored number in the contract to the provided number.  Prints the result of the transaction on the backend console. | POST | { number: uint } |  |
+| /getString | Returns the string as response | GET |  |  |
+| /setString | Sets the stored string in the contract to the provided string.  Prints the result of the transaction on the backend console. | POST | { string: string } |  |
 
 [^1]: https://www.sitepoint.com/truffle-migrations-explained/
 
