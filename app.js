@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const config = require("./config.js")
 const HDWalletProvider = require("truffle-hdwallet-provider");
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json());
 
@@ -35,6 +37,26 @@ app.post('/setNumber', (req, res) => {
   let number = JSON.parse(req.body.number);
   console.log(`Setting number: ${number}`)
   truffle_connect.setNumber(number, (tx_result) => {
+    console.log(tx_result)
+    res.send(tx_result);
+  });
+});
+app.get('/getString', (req, res) => {
+  console.log("**** GET /getString ****");
+  console.log(req.body);
+
+  truffle_connect.getString( (answer) => {
+    let str = answer;
+    res.send(`The string is: ${str}`);
+  });
+});
+
+app.post('/setString', (req, res) => {
+  console.log("**** POST /setString ****");
+  console.log(req.body)
+  let string = JSON.stringify(req.body.string);
+  console.log(`Setting string: ${string}`)
+  truffle_connect.setString(string, (tx_result) => {
     console.log(tx_result)
     res.send(tx_result);
   });

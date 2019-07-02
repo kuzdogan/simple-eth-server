@@ -61,5 +61,39 @@ module.exports = {
         console.log(e);
         callback("Error 404");
     });
-  }
+  },
+  getString: function(callback) {
+    var self = this;
+
+    // Bootstrap the MetaCoin abstraction for Use.
+    Storage.setProvider(self.web3.currentProvider);
+    
+    Storage.deployed().then(function(instance) {
+      return instance.getString.call();
+    }).then(function(value) {
+        callback(value.valueOf());
+    }).catch(function(e) {
+        console.log(e);
+        callback("Error 404");
+    });
+  },
+  setString: function(string, callback) {
+    var self = this;
+
+    Storage.setProvider(self.web3.currentProvider);
+    console.log('Setting string in truffle_connect')
+    Storage.deployed().then(function(instance) {
+      console.log('DEPLOYED')
+      instance.setString(string, {from: self.account}).then( (result) => {
+        callback(result);
+        return result;
+      });
+    }).then(function() {
+        
+    }).catch(function(e) {
+        console.log('FAILED')
+        console.log(e);
+        callback("Error 404");
+    });
+  },
 }

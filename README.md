@@ -6,6 +6,7 @@ and a server that:
 - Interacts with the simple contract
 
 The Ethereum account used here in `config.js` is only for development purposes and only used in Ropsten network. Do not share your account seed(mnemonic) publicly.
+
 # Usage
 
 ## 1. Install truffle
@@ -62,17 +63,22 @@ You can access the server at `http://localhost:3000/`
 
 # API
 
-| Endpoints | Function | Type | Params |  |
+| Endpoints | Function | Type | Params |
 |--------------|------------------------------------------------------------------|------|------------------|---|
-| /getAccounts | Returns accounts associated with the seed provided to the wallet | GET |  |  |
-| /getNumber | Returns the number as response | GET |  |  |
-| /setNumber | Sets the stored number in the contract to the provided number. Prints the result on the backend console. | POST | { number: uint } |  |
+| /getAccounts | Returns accounts associated with the seed provided to the wallet | GET |  |
+| /getNumber | Returns the number as response | GET |  |
+| /setNumber | Sets the stored number in the contract to the provided number. Prints the result of the transaction on the backend console. | POST | { number: <uint> } |
+| /getString | Returns the string as response | GET |  |
+| /setString | Sets the stored string in the contract to the provided string. Prints the result of the transaction on the backend console. | POST | { string: <string> } |
 
 [^1]: https://www.sitepoint.com/truffle-migrations-explained/
 
+# Guide
 
-Infura 
-It is a method for connecting to the Ethereum network without having to run a full node,
+## Infura
+We are using Infura as our provider. It is described as:
+> Infura is a hosted Ethereum node cluster that lets your users run your application without requiring them to set up their own Ethereum node or wallet.
 
-To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
- * to sign your transactions before they're sent to a remote public node.
+To interact with the Ethereum blockchain we need to run a full node using a client like `parity` or `geth`. This is pretty inconvenient as we need to download the whole blockchain and simulate it since the genesis block. Instead we can rely on providers that will forward our transactions to the network and let us call functions from contracts. It is a method for connecting to the Ethereum network without having to run a full node. Infura provides endpoints to interact with blockchain.
+
+To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider) to sign your transactions before they're sent to a remote public node. 
